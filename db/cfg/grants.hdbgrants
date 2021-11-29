@@ -12,7 +12,6 @@
                         "PROCESS REMOTE SUBSCRIPTION EXCEPTION",
                         "ALTER",
                         "DROP"
-
                     ]
                 }
             ]
@@ -28,8 +27,7 @@
                     "CREATE REMOTE SUBSCRIPTION",
                     "PROCESS REMOTE SUBSCRIPTION EXCEPTION",
                     "ALTER",
-                    "DROP"
-    
+                    "DROP"    
                 ]
             }
         ]
