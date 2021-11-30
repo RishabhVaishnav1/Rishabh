@@ -678,9 +678,7 @@
       <viewAttribute id="MAKTX"/>
       <viewAttribute id="MAKTX_1"/>
       <viewAttribute id="MAKTG"/>
-      <viewAttribute id="Test_CC"/>
-      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
-    </viewAttributes>
+      <viewAttribute id="Test_CC"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="MAKT">
       <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
@@ -689,9 +687,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_1" source="MAKTX"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MAKTG" source="MAKTG"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="Test_CC" source="Test_CC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
-    </input>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/></input>
     <input node="MARA">
       <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CREATED_AT_TIME" source="CREATED_AT_TIME"/>
@@ -988,9 +984,9 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MAXB" source="MAXB"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MAXL" source="MAXL"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="QQTIME" source="QQTIME"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
     </input>
-    <joinAttribute name="JOIN$MATNR$MATNR"/>
+    <joinAttribute name="MATNR"/>
   </calculationView>
 </calculationViews>
 
@@ -2216,31 +2212,31 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="221.11302679000914" y="112"/>
+      <upperLeftCorner x="221" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
     
   
     <shape expanded="true" modelObjectName="MARA" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="356.9999988079071"/>
+      <upperLeftCorner x="92" y="356"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MAKT" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302.00000000000006" y="356.9999988079071"/>
+      <upperLeftCorner x="302" y="356"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   
   
     <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="221.11302679000914" y="217"/>
+      <upperLeftCorner x="221" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="MAKT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+    <shape modelObjectName="MAKT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="217"/>
     </shape>
-    <shape modelObjectName="MARA" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+    <shape modelObjectName="MARA" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="20" y="30"/>
       <rectangleSize width="281"/>
     </shape></shapes>

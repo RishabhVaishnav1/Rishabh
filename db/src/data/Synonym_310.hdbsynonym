@@ -1,0 +1,8 @@
+{
+  "S_ZSC_SERVICENOW_HANA": {
+    "target": {
+      "object": "ZSC_SERVICENOW_HANA",
+      "schema": "Z_S4_310"
+    }
+  }
+}

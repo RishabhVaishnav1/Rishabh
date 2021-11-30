@@ -1,0 +1,8 @@
+{
+  "S_MARA_HANA": {
+    "target": {
+      "object": "MARA_HANA",
+      "schema": "Z_S4_303"
+    }
+  }
+}
