@@ -4,5 +4,23 @@
       "object": "ZSC_SERVICENOW_HANA",
       "schema": "Z_S4_310"
     }
+  },
+  "S_LIKP_HANA": {
+    "target": {
+      "object": "LIKP_HANA",
+      "schema": "Z_S4_310"
+    }
+  },
+  "S_LIPS_HANA": {
+    "target": {
+      "object": "LIPS_HANA",
+      "schema": "Z_S4_310"
+    }
+  },
+  "S_ADRC_HANA": {
+    "target": {
+      "object": "ADRC_HANA",
+      "schema": "Z_S4_310"
+    }
   }
 }
