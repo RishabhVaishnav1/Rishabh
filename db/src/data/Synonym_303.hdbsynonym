@@ -5,291 +5,315 @@
       "schema": "Z_S4_303"
     }
   },
-  "S_VBAK_HANA": {
+  "S_VBAK_HANA_303": {
     "target": {
       "object": "VBAK_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_VBAP_HANA": {
+  "S_VBAP_HANA_303": {
     "target": {
       "object": "VBAP_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_VBEP_HANA": {
+  "S_VBEP_HANA_303": {
     "target": {
       "object": "VBEP_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_VBPA_HANA": {
+  "S_VBPA_HANA_303": {
     "target": {
       "object": "VBPA_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_VBFA_HANA": {
+  "S_VBFA_HANA_303": {
     "target": {
       "object": "VBFA_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_VBKD_HANA": {
+  "S_VBKD_HANA_303": {
     "target": {
       "object": "VBKD_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PRCD_ELEMENTS_HANA": {
+  "S_PRCD_ELEMENTS_HANA_303": {
     "target": {
       "object": "PRCD_ELEMENTS_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_VBRP_HANA": {
+  "S_VBRP_HANA_303": {
     "target": {
       "object": "VBRP_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_VBRK_HANA": {
+  "S_VBRK_HANA_303": {
     "target": {
       "object": "VBRK_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_KNA1_HANA": {
+  "S_KNA1_HANA_303": {
     "target": {
       "object": "KNA1_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_KNVV_HANA": {
+  "S_KNVV_HANA_303": {
     "target": {
       "object": "KNVV_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_KNVP_HANA": {
+  "S_KNVP_HANA_303": {
     "target": {
       "object": "KNVP_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_MVKE_HANA": {
+  "S_MVKE_HANA_303": {
     "target": {
       "object": "MVKE_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_MBEW_HANA": {
+  "S_MBEW_HANA_303": {
     "target": {
       "object": "MBEW_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_MARC_HANA": {
+  "S_MARC_HANA_303": {
     "target": {
       "object": "MARC_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_T179_HANA": {
+  "S_T179_HANA_303": {
     "target": {
       "object": "T179_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_ACDOCA_HANA": {
+  "S_ACDOCA_HANA_303": {
     "target": {
       "object": "ACDOCA_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_EINA_HANA": {
+  "S_EINA_HANA_303": {
     "target": {
       "object": "EINA_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_A017_HANA": {
+  "S_A017_HANA_303": {
     "target": {
       "object": "A017_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_LFA1_HANA": {
+  "S_LFA1_HANA_303": {
     "target": {
       "object": "LFA1_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_LFB1_HANA": {
+  "S_LFB1_HANA_303": {
     "target": {
       "object": "LFB1_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_TPAR_HANA": {
+  "S_TPAR_HANA_303": {
     "target": {
       "object": "TPAR_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_STKO_HANA": {
+  "S_STKO_HANA_303": {
     "target": {
       "object": "STKO_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_STPO_HANA": {
+  "S_STPO_HANA_303": {
     "target": {
       "object": "STPO_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_BUT000_HANA": {
+  "S_BUT000_HANA_303": {
     "target": {
       "object": "BUT000_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_MAST_HANA": {
+  "S_MAST_HANA_303": {
     "target": {
       "object": "MAST_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_ZOM_OG_PROMO_HANA": {
+  "S_ZOM_OG_PROMO_HANA_303": {
     "target": {
       "object": "ZOM_OG_PROMO_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_ZOM_OG_GIFTCARD_HANA": {
+  "S_ZOM_OG_GIFTCARD_HANA_303": {
     "target": {
       "object": "ZOM_OG_GIFTCARD_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PI_DCTYTXT_HANA": {
+  "S_PI_DCTYTXT_HANA_303": {
     "target": {
       "object": "PI_DCTYTXT_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PI_DOCTYPE_HANA": {
+  "S_PI_DOCTYPE_HANA_303": {
     "target": {
       "object": "PI_DOCTYPE_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PI_DOC_IT_HANA": {
+  "S_PI_DOC_IT_HANA_303": {
     "target": {
       "object": "PI_DOC_IT_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PI_DOC_TB_HANA": {
+  "S_PI_DOC_TB_HANA_303": {
     "target": {
       "object": "PI_DOC_TB_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PI_DOC_SER_HANA": {
+  "S_PI_DOC_SER_HANA_303": {
     "target": {
       "object": "PI_DOC_SER_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PI_IT_BIZ_HANA": {
+  "S_PI_IT_BIZ_HANA_303": {
     "target": {
       "object": "PI_IT_BIZ_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PI_LOGHEAD_HANA": {
+  "S_PI_LOGHEAD_HANA_303": {
     "target": {
       "object": "PI_LOGHEAD_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PI_LOGHIST_HANA": {
+  "S_PI_LOGHIST_HANA_303": {
     "target": {
       "object": "PI_LOGHIST_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PI_LOGITEM_HANA": {
+  "S_PI_LOGITEM_HANA_303": {
     "target": {
       "object": "PI_LOGITEM_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_PI_PAR_BIZ_HANA": {
+  "S_PI_PAR_BIZ_HANA_303": {
     "target": {
       "object": "PI_PAR_BIZ_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_MAKT_HANA": {
+  "S_MAKT_HANA_303": {
     "target": {
       "object": "MAKT_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_TVFKT_HANA": {
+  "S_TVFKT_HANA_303": {
     "target": {
       "object": "TVFKT_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_T001T_HANA": {
+  "S_T001T_HANA_303": {
     "target": {
       "object": "T001T_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_TVKOT_HANA": {
+  "S_TVKOT_HANA_303": {
     "target": {
       "object": "TVKOT_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_TSPAT_HANA": {
+  "S_TSPAT_HANA_303": {
     "target": {
       "object": "TSPAT_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_AQUA_HANA": {
+  "S_AQUA_HANA_303": {
     "target": {
       "object": "AQUA_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_ORDIM_C_HANA": {
+  "S_ORDIM_C_HANA_303": {
     "target": {
       "object": "ORDIM_C_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_AUSP_HANA": {
+  "S_AUSP_HANA_303": {
     "target": {
       "object": "AUSP_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_CABNT_HANA": {
+  "S_CABNT_HANA_303": {
     "target": {
       "object": "CABNT_HANA",
       "schema": "Z_S4_303"
     }
   },
-  "S_INOB_HANA": {
+  "S_INOB_HANA_303": {
     "target": {
       "object": "INOB_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_ADRC_HANA_303": {
+    "target": {
+      "object": "ADRC_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_LIKP_HANA_303": {
+    "target": {
+      "object": "LIKP_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_LIPS_HANA_303": {
+    "target": {
+      "object": "LIPS_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_ZSC_SERVICENOW_HANA_303": {
+    "target": {
+      "object": "ZSC_SERVICENOW_HANA",
       "schema": "Z_S4_303"
     }
   }
