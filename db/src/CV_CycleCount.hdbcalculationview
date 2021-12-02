@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_CycleCount" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_CycleCount.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="S_PI_DOC_IT_HANA_303">
+    <resourceUri>S_PI_DOC_IT_HANA_303</resourceUri>
+  </DataSource>
+  <DataSource id="S_PI_LOGHEAD_HANA_303">
+    <resourceUri>S_PI_LOGHEAD_HANA_303</resourceUri>
+  </DataSource>
+  <DataSource id="S_PI_IT_BIZ_HANA_303">
+    <resourceUri>S_PI_IT_BIZ_HANA_303</resourceUri>
+  </DataSource>
+  <DataSource id="S_PI_PAR_BIZ_HANA_303">
+    <resourceUri>S_PI_PAR_BIZ_HANA_303</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="DOC_IT">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="GUIDDOC"/>
+      <viewAttribute id="ITEMNO"/>
+      <viewAttribute id="LINEIDX"/>
+      <viewAttribute id="CHANGESEQ"/>
+      <viewAttribute id="ITEMTYPE"/>
+      <viewAttribute id="ITEMGROUP"/>
+      <viewAttribute id="LVL"/>
+      <viewAttribute id="DOCTYPE"/>
+      <viewAttribute id="DOCSTATUS"/>
+      <viewAttribute id="COUNTDATE"/>
+      <viewAttribute id="COUNTUSER"/>
+      <viewAttribute id="CREATEDATE"/>
+      <viewAttribute id="POSTDATE"/>
+      <viewAttribute id="DIFDIRECTION"/>
+      <viewAttribute id="POSTITEM"/>
+      <viewAttribute id="GUIDITEM"/>
+      <viewAttribute id="TYPEITEM"/>
+      <viewAttribute id="IDXITEM"/>
+      <viewAttribute id="GUIDPARENT"/>
+      <viewAttribute id="TYPEPARENT"/>
+      <viewAttribute id="IDXPARENT"/>
+      <viewAttribute id="PIAREA"/>
+      <viewAttribute id="BLOCKIND"/>
+      <viewAttribute id="FREEZEIND"/>
+      <viewAttribute id="TIMEBOOKQUAND"/>
+      <viewAttribute id="VSIITEM"/>
+      <viewAttribute id="PRIORITY"/>
+      <viewAttribute id="ITEMNEWIND"/>
+      <viewAttribute id="INDPRINTED"/>
+      <viewAttribute id="ORDERSEQ"/>
+      <viewAttribute id="LINEGUID"/>
+      <viewAttribute id="INDHUITEMCOMP"/>
+      <viewAttribute id="INDLOCPARCOMP"/>
+      <viewAttribute id="INDLOCPAREMPT"/>
+      <viewAttribute id="INDHUITEMEMPT"/>
+      <viewAttribute id="INDHUITEMNOEX"/>
+      <viewAttribute id="INDITEMCHECKED"/>
+      <viewAttribute id="INDADDITCHECK"/>
+      <viewAttribute id="REASON"/>
+      <viewAttribute id="HOLDINCLUDE"/>
+      <viewAttribute id="INSPTYP"/>
+      <viewAttribute id="INSPID"/>
+      <viewAttribute id="IDPLATE"/>
+      <viewAttribute id="QDOCCAT"/>
+      <viewAttribute id="QDOCID"/>
+      <viewAttribute id="QITMID"/>
+      <viewAttribute id="HOLDINCLUDEINF"/>
+      <viewAttribute id="WDATU"/>
+      <viewAttribute id="VFDAT"/>
+      <viewAttribute id="COO"/>
+      <viewAttribute id="BRESTR"/>
+      <viewAttribute id="EXCCODE"/>
+      <viewAttribute id="IPRCODE"/>
+      <viewAttribute id="DATAAGING"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="S_PI_DOC_IT_HANA_303"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="LOGHEAD">
+    <viewAttributes>
+      <viewAttribute id="GUIDDOC"/>
+      <viewAttribute id="DOCYEAR"/>
+      <viewAttribute id="DOCNUMBER"/>
+      <viewAttribute id="LGNUM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="S_PI_LOGHEAD_HANA_303"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="DOC_JOIN" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="ITEMNO"/>
+      <viewAttribute id="LINEIDX" aggregationType="sum"/>
+      <viewAttribute id="CHANGESEQ" aggregationType="sum"/>
+      <viewAttribute id="ITEMTYPE"/>
+      <viewAttribute id="ITEMGROUP"/>
+      <viewAttribute id="LVL" aggregationType="sum"/>
+      <viewAttribute id="DOCTYPE"/>
+      <viewAttribute id="DOCSTATUS"/>
+      <viewAttribute id="COUNTDATE" aggregationType="sum"/>
+      <viewAttribute id="COUNTUSER"/>
+      <viewAttribute id="CREATEDATE" aggregationType="sum"/>
+      <viewAttribute id="POSTDATE" aggregationType="sum"/>
+      <viewAttribute id="DIFDIRECTION"/>
+      <viewAttribute id="POSTITEM"/>
+      <viewAttribute id="GUIDITEM"/>
+      <viewAttribute id="TYPEITEM"/>
+      <viewAttribute id="IDXITEM"/>
+      <viewAttribute id="GUIDPARENT"/>
+      <viewAttribute id="TYPEPARENT"/>
+      <viewAttribute id="IDXPARENT"/>
+      <viewAttribute id="PIAREA"/>
+      <viewAttribute id="BLOCKIND"/>
+      <viewAttribute id="FREEZEIND"/>
+      <viewAttribute id="TIMEBOOKQUAND" aggregationType="sum"/>
+      <viewAttribute id="VSIITEM"/>
+      <viewAttribute id="PRIORITY"/>
+      <viewAttribute id="ITEMNEWIND"/>
+      <viewAttribute id="INDPRINTED"/>
+      <viewAttribute id="ORDERSEQ" aggregationType="sum"/>
+      <viewAttribute id="LINEGUID"/>
+      <viewAttribute id="INDHUITEMCOMP"/>
+      <viewAttribute id="INDLOCPARCOMP"/>
+      <viewAttribute id="INDLOCPAREMPT"/>
+      <viewAttribute id="INDHUITEMEMPT"/>
+      <viewAttribute id="INDHUITEMNOEX"/>
+      <viewAttribute id="INDITEMCHECKED"/>
+      <viewAttribute id="INDADDITCHECK"/>
+      <viewAttribute id="REASON"/>
+      <viewAttribute id="HOLDINCLUDE"/>
+      <viewAttribute id="INSPTYP"/>
+      <viewAttribute id="INSPID"/>
+      <viewAttribute id="IDPLATE"/>
+      <viewAttribute id="QDOCCAT"/>
+      <viewAttribute id="QDOCID"/>
+      <viewAttribute id="QITMID"/>
+      <viewAttribute id="HOLDINCLUDEINF"/>
+      <viewAttribute id="WDATU" aggregationType="sum"/>
+      <viewAttribute id="VFDAT"/>
+      <viewAttribute id="COO"/>
+      <viewAttribute id="BRESTR"/>
+      <viewAttribute id="EXCCODE"/>
+      <viewAttribute id="IPRCODE"/>
+      <viewAttribute id="DATAAGING"/>
+      <viewAttribute id="GUIDDOC"/>
+      <viewAttribute id="DOCYEAR"/>
+      <viewAttribute id="DOCNUMBER"/>
+      <viewAttribute id="LGNUM"/>
+      <viewAttribute hidden="true" id="JOIN$GUIDDOC$GUIDDOC"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DOC_IT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHANGESEQ" source="CHANGESEQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE" source="ITEMTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMGROUP" source="ITEMGROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVL" source="LVL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCTYPE" source="DOCTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCSTATUS" source="DOCSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTDATE" source="COUNTDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTUSER" source="COUNTUSER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDATE" source="CREATEDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTDATE" source="POSTDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIFDIRECTION" source="DIFDIRECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTITEM" source="POSTITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDITEM" source="GUIDITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPEITEM" source="TYPEITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDXITEM" source="IDXITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDPARENT" source="GUIDPARENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPEPARENT" source="TYPEPARENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDXPARENT" source="IDXPARENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIAREA" source="PIAREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLOCKIND" source="BLOCKIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FREEZEIND" source="FREEZEIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMEBOOKQUAND" source="TIMEBOOKQUAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSIITEM" source="VSIITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRIORITY" source="PRIORITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNEWIND" source="ITEMNEWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDPRINTED" source="INDPRINTED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORDERSEQ" source="ORDERSEQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEGUID" source="LINEGUID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDHUITEMCOMP" source="INDHUITEMCOMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDLOCPARCOMP" source="INDLOCPARCOMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDLOCPAREMPT" source="INDLOCPAREMPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDHUITEMEMPT" source="INDHUITEMEMPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDHUITEMNOEX" source="INDHUITEMNOEX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDITEMCHECKED" source="INDITEMCHECKED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDADDITCHECK" source="INDADDITCHECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REASON" source="REASON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOLDINCLUDE" source="HOLDINCLUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INSPTYP" source="INSPTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INSPID" source="INSPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDPLATE" source="IDPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QDOCCAT" source="QDOCCAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QDOCID" source="QDOCID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QITMID" source="QITMID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOLDINCLUDEINF" source="HOLDINCLUDEINF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WDATU" source="WDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VFDAT" source="VFDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COO" source="COO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRESTR" source="BRESTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXCCODE" source="EXCCODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPRCODE" source="IPRCODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAAGING" source="DATAAGING"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GUIDDOC$GUIDDOC" source="GUIDDOC"/>
+    </input>
+    <input node="LOGHEAD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDDOC" source="GUIDDOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCYEAR" source="DOCYEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCNUMBER" source="DOCNUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$GUIDDOC$GUIDDOC" source="GUIDDOC"/>
+    </input>
+    <joinAttribute name="JOIN$GUIDDOC$GUIDDOC"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="IT_BIZ_JOIN" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="ITEMNO"/>
+      <viewAttribute id="LINEIDX" aggregationType="sum"/>
+      <viewAttribute id="CHANGESEQ" aggregationType="sum"/>
+      <viewAttribute id="ITEMTYPE"/>
+      <viewAttribute id="ITEMGROUP"/>
+      <viewAttribute id="LVL" aggregationType="sum"/>
+      <viewAttribute id="DOCTYPE"/>
+      <viewAttribute id="DOCSTATUS"/>
+      <viewAttribute id="COUNTDATE" aggregationType="sum"/>
+      <viewAttribute id="COUNTUSER"/>
+      <viewAttribute id="CREATEDATE" aggregationType="sum"/>
+      <viewAttribute id="POSTDATE" aggregationType="sum"/>
+      <viewAttribute id="DIFDIRECTION"/>
+      <viewAttribute id="POSTITEM"/>
+      <viewAttribute id="GUIDITEM"/>
+      <viewAttribute id="TYPEITEM"/>
+      <viewAttribute id="IDXITEM"/>
+      <viewAttribute id="GUIDPARENT"/>
+      <viewAttribute id="TYPEPARENT"/>
+      <viewAttribute id="IDXPARENT"/>
+      <viewAttribute id="PIAREA"/>
+      <viewAttribute id="BLOCKIND"/>
+      <viewAttribute id="FREEZEIND"/>
+      <viewAttribute id="TIMEBOOKQUAND" aggregationType="sum"/>
+      <viewAttribute id="VSIITEM"/>
+      <viewAttribute id="PRIORITY"/>
+      <viewAttribute id="ITEMNEWIND"/>
+      <viewAttribute id="INDPRINTED"/>
+      <viewAttribute id="ORDERSEQ" aggregationType="sum"/>
+      <viewAttribute id="LINEGUID"/>
+      <viewAttribute id="INDHUITEMCOMP"/>
+      <viewAttribute id="INDLOCPARCOMP"/>
+      <viewAttribute id="INDLOCPAREMPT"/>
+      <viewAttribute id="INDHUITEMEMPT"/>
+      <viewAttribute id="INDHUITEMNOEX"/>
+      <viewAttribute id="INDITEMCHECKED"/>
+      <viewAttribute id="INDADDITCHECK"/>
+      <viewAttribute id="REASON"/>
+      <viewAttribute id="HOLDINCLUDE"/>
+      <viewAttribute id="INSPTYP"/>
+      <viewAttribute id="INSPID"/>
+      <viewAttribute id="IDPLATE"/>
+      <viewAttribute id="QDOCCAT"/>
+      <viewAttribute id="QDOCID"/>
+      <viewAttribute id="QITMID"/>
+      <viewAttribute id="HOLDINCLUDEINF"/>
+      <viewAttribute id="WDATU" aggregationType="sum"/>
+      <viewAttribute id="VFDAT"/>
+      <viewAttribute id="COO"/>
+      <viewAttribute id="BRESTR"/>
+      <viewAttribute id="EXCCODE"/>
+      <viewAttribute id="IPRCODE"/>
+      <viewAttribute id="DATAAGING"/>
+      <viewAttribute id="GUIDDOC"/>
+      <viewAttribute id="DOCYEAR"/>
+      <viewAttribute id="DOCNUMBER"/>
+      <viewAttribute id="LGNUM"/>
+    
+      <viewAttribute id="ITEMNO_1"/>
+      <viewAttribute id="LINEIDX_1" aggregationType="sum"/>
+      <viewAttribute id="ITEMTYPE_1"/>
+    
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DOC_JOIN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHANGESEQ" source="CHANGESEQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE" source="ITEMTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMGROUP" source="ITEMGROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVL" source="LVL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCTYPE" source="DOCTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCSTATUS" source="DOCSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTDATE" source="COUNTDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTUSER" source="COUNTUSER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDATE" source="CREATEDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTDATE" source="POSTDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIFDIRECTION" source="DIFDIRECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTITEM" source="POSTITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDITEM" source="GUIDITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPEITEM" source="TYPEITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDXITEM" source="IDXITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDPARENT" source="GUIDPARENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPEPARENT" source="TYPEPARENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDXPARENT" source="IDXPARENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIAREA" source="PIAREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLOCKIND" source="BLOCKIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FREEZEIND" source="FREEZEIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMEBOOKQUAND" source="TIMEBOOKQUAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSIITEM" source="VSIITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRIORITY" source="PRIORITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNEWIND" source="ITEMNEWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDPRINTED" source="INDPRINTED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORDERSEQ" source="ORDERSEQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEGUID" source="LINEGUID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDHUITEMCOMP" source="INDHUITEMCOMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDLOCPARCOMP" source="INDLOCPARCOMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDLOCPAREMPT" source="INDLOCPAREMPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDHUITEMEMPT" source="INDHUITEMEMPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDHUITEMNOEX" source="INDHUITEMNOEX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDITEMCHECKED" source="INDITEMCHECKED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDADDITCHECK" source="INDADDITCHECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REASON" source="REASON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOLDINCLUDE" source="HOLDINCLUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INSPTYP" source="INSPTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INSPID" source="INSPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDPLATE" source="IDPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QDOCCAT" source="QDOCCAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QDOCID" source="QDOCID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QITMID" source="QITMID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOLDINCLUDEINF" source="HOLDINCLUDEINF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WDATU" source="WDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VFDAT" source="VFDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COO" source="COO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRESTR" source="BRESTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXCCODE" source="EXCCODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPRCODE" source="IPRCODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAAGING" source="DATAAGING"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDDOC" source="GUIDDOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCYEAR" source="DOCYEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCNUMBER" source="DOCNUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
+    </input>
+    <input node="IT_BIZ">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO_1" source="ITEMNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX_1" source="LINEIDX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE_1" source="ITEMTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATID" source="MATID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE" source="ITEMTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDDOC" source="GUIDDOC"/>
+    </input>
+    <joinAttribute name="ITEMNO"/>
+    <joinAttribute name="LINEIDX"/>
+    <joinAttribute name="ITEMTYPE"/>
+    <joinAttribute name="GUIDDOC"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="IT_BIZ">
+    <viewAttributes>
+      <viewAttribute id="ITEMNO"/>
+      <viewAttribute id="LINEIDX"/>
+      <viewAttribute id="ITEMTYPE"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATID"/>
+    
+      <viewAttribute id="GUIDDOC"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="S_PI_IT_BIZ_HANA_303"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PAR_BIZ">
+    <viewAttributes>
+      <viewAttribute id="GUIDDOC"/>
+      <viewAttribute id="ITEMNO"/>
+      <viewAttribute id="LINEIDX"/>
+      <viewAttribute id="ITEMTYPE"/>
+      <viewAttribute id="LGTYP"/>
+      <viewAttribute id="LGPLA"/>
+      <viewAttribute id="LGORT"/>
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="S_PI_PAR_BIZ_HANA_303"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="PAR_BIZ_JOIN" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="ITEMNO"/>
+      <viewAttribute id="LINEIDX" aggregationType="sum"/>
+      <viewAttribute id="CHANGESEQ" aggregationType="sum"/>
+      <viewAttribute id="ITEMTYPE"/>
+      <viewAttribute id="ITEMGROUP"/>
+      <viewAttribute id="LVL" aggregationType="sum"/>
+      <viewAttribute id="DOCTYPE"/>
+      <viewAttribute id="DOCSTATUS"/>
+      <viewAttribute id="COUNTDATE" aggregationType="sum"/>
+      <viewAttribute id="COUNTUSER"/>
+      <viewAttribute id="CREATEDATE" aggregationType="sum"/>
+      <viewAttribute id="POSTDATE" aggregationType="sum"/>
+      <viewAttribute id="DIFDIRECTION"/>
+      <viewAttribute id="POSTITEM"/>
+      <viewAttribute id="GUIDITEM"/>
+      <viewAttribute id="TYPEITEM"/>
+      <viewAttribute id="IDXITEM"/>
+      <viewAttribute id="GUIDPARENT"/>
+      <viewAttribute id="TYPEPARENT"/>
+      <viewAttribute id="IDXPARENT"/>
+      <viewAttribute id="PIAREA"/>
+      <viewAttribute id="BLOCKIND"/>
+      <viewAttribute id="FREEZEIND"/>
+      <viewAttribute id="TIMEBOOKQUAND" aggregationType="sum"/>
+      <viewAttribute id="VSIITEM"/>
+      <viewAttribute id="PRIORITY"/>
+      <viewAttribute id="ITEMNEWIND"/>
+      <viewAttribute id="INDPRINTED"/>
+      <viewAttribute id="ORDERSEQ" aggregationType="sum"/>
+      <viewAttribute id="LINEGUID"/>
+      <viewAttribute id="INDHUITEMCOMP"/>
+      <viewAttribute id="INDLOCPARCOMP"/>
+      <viewAttribute id="INDLOCPAREMPT"/>
+      <viewAttribute id="INDHUITEMEMPT"/>
+      <viewAttribute id="INDHUITEMNOEX"/>
+      <viewAttribute id="INDITEMCHECKED"/>
+      <viewAttribute id="INDADDITCHECK"/>
+      <viewAttribute id="REASON"/>
+      <viewAttribute id="HOLDINCLUDE"/>
+      <viewAttribute id="INSPTYP"/>
+      <viewAttribute id="INSPID"/>
+      <viewAttribute id="IDPLATE"/>
+      <viewAttribute id="QDOCCAT"/>
+      <viewAttribute id="QDOCID"/>
+      <viewAttribute id="QITMID"/>
+      <viewAttribute id="HOLDINCLUDEINF"/>
+      <viewAttribute id="WDATU" aggregationType="sum"/>
+      <viewAttribute id="VFDAT"/>
+      <viewAttribute id="COO"/>
+      <viewAttribute id="BRESTR"/>
+      <viewAttribute id="EXCCODE"/>
+      <viewAttribute id="IPRCODE"/>
+      <viewAttribute id="DATAAGING"/>
+      <viewAttribute id="GUIDDOC"/>
+      <viewAttribute id="DOCYEAR"/>
+      <viewAttribute id="DOCNUMBER"/>
+      <viewAttribute id="LGNUM"/>
+      <viewAttribute id="ITEMNO_1"/>
+      <viewAttribute id="LINEIDX_1" aggregationType="sum"/>
+      <viewAttribute id="ITEMTYPE_1"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATID"/>
+      <viewAttribute id="ITEMNO_2"/>
+      <viewAttribute id="LINEIDX_2" aggregationType="sum"/>
+      <viewAttribute id="ITEMTYPE_2"/>
+      <viewAttribute id="LGTYP"/>
+      <viewAttribute id="LGPLA"/>
+      <viewAttribute id="LGORT"/>
+    
+      <viewAttribute id="WERKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="IT_BIZ_JOIN">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHANGESEQ" source="CHANGESEQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE" source="ITEMTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMGROUP" source="ITEMGROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVL" source="LVL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCTYPE" source="DOCTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCSTATUS" source="DOCSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTDATE" source="COUNTDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTUSER" source="COUNTUSER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CREATEDATE" source="CREATEDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTDATE" source="POSTDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIFDIRECTION" source="DIFDIRECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSTITEM" source="POSTITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDITEM" source="GUIDITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPEITEM" source="TYPEITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDXITEM" source="IDXITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDPARENT" source="GUIDPARENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPEPARENT" source="TYPEPARENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDXPARENT" source="IDXPARENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIAREA" source="PIAREA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BLOCKIND" source="BLOCKIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FREEZEIND" source="FREEZEIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMEBOOKQUAND" source="TIMEBOOKQUAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VSIITEM" source="VSIITEM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRIORITY" source="PRIORITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNEWIND" source="ITEMNEWIND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDPRINTED" source="INDPRINTED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORDERSEQ" source="ORDERSEQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEGUID" source="LINEGUID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDHUITEMCOMP" source="INDHUITEMCOMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDLOCPARCOMP" source="INDLOCPARCOMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDLOCPAREMPT" source="INDLOCPAREMPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDHUITEMEMPT" source="INDHUITEMEMPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDHUITEMNOEX" source="INDHUITEMNOEX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDITEMCHECKED" source="INDITEMCHECKED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDADDITCHECK" source="INDADDITCHECK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REASON" source="REASON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOLDINCLUDE" source="HOLDINCLUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INSPTYP" source="INSPTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INSPID" source="INSPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDPLATE" source="IDPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QDOCCAT" source="QDOCCAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QDOCID" source="QDOCID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QITMID" source="QITMID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HOLDINCLUDEINF" source="HOLDINCLUDEINF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WDATU" source="WDATU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VFDAT" source="VFDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COO" source="COO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRESTR" source="BRESTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EXCCODE" source="EXCCODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IPRCODE" source="IPRCODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAAGING" source="DATAAGING"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDDOC" source="GUIDDOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCYEAR" source="DOCYEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOCNUMBER" source="DOCNUMBER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO_1" source="ITEMNO_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX_1" source="LINEIDX_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE_1" source="ITEMTYPE_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATID" source="MATID"/>
+    </input>
+    <input node="PAR_BIZ">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO_2" source="ITEMNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX_2" source="LINEIDX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE_2" source="ITEMTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGTYP" source="LGTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGPLA" source="LGPLA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDDOC" source="GUIDDOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE" source="ITEMTYPE"/>
+    </input>
+    <joinAttribute name="GUIDDOC"/>
+    <joinAttribute name="LINEIDX"/>
+    <joinAttribute name="ITEMNO"/>
+    <joinAttribute name="ITEMTYPE"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="PAR_BIZ_JOIN">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLIENT"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="MANDT"/>
+    </attribute>
+    <attribute id="ITEMNO" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ITEM_NUMBER"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMNO"/>
+    </attribute>
+    <attribute id="ITEMTYPE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ITEMTYPE"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMTYPE"/>
+    </attribute>
+    <attribute id="ITEMGROUP" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ITEMGROUP"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMGROUP"/>
+    </attribute>
+    <attribute id="DOCTYPE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMENT_TYPE"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DOCTYPE"/>
+    </attribute>
+    <attribute id="DOCSTATUS" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOCUMNET_STATUS"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DOCSTATUS"/>
+    </attribute>
+    <attribute id="COUNTUSER" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNT_USER"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="COUNTUSER"/>
+    </attribute>
+    <attribute id="DIFDIRECTION" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DIFDIRECTION"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DIFDIRECTION"/>
+    </attribute>
+    <attribute id="POSTITEM" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POSTITEM"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="POSTITEM"/>
+    </attribute>
+    <attribute id="GUIDITEM" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GUIDITEM"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="GUIDITEM"/>
+    </attribute>
+    <attribute id="TYPEITEM" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TYPEITEM"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="TYPEITEM"/>
+    </attribute>
+    <attribute id="IDXITEM" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IDXITEM"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="IDXITEM"/>
+    </attribute>
+    <attribute id="GUIDPARENT" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GUIDPARENT"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="GUIDPARENT"/>
+    </attribute>
+    <attribute id="TYPEPARENT" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TYPEPARENT"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="TYPEPARENT"/>
+    </attribute>
+    <attribute id="IDXPARENT" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IDXPARENT"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="IDXPARENT"/>
+    </attribute>
+    <attribute id="PIAREA" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PIAREA"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="PIAREA"/>
+    </attribute>
+    <attribute id="BLOCKIND" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BLOCKIND"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="BLOCKIND"/>
+    </attribute>
+    <attribute id="FREEZEIND" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FREEZEIND"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="FREEZEIND"/>
+    </attribute>
+    <attribute id="VSIITEM" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VSIITEM"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="VSIITEM"/>
+    </attribute>
+    <attribute id="PRIORITY" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRIORITY"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="PRIORITY"/>
+    </attribute>
+    <attribute id="ITEMNEWIND" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ITEMNEWIND"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMNEWIND"/>
+    </attribute>
+    <attribute id="INDPRINTED" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INDPRINTED"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDPRINTED"/>
+    </attribute>
+    <attribute id="LINEGUID" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LINEGUID"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="LINEGUID"/>
+    </attribute>
+    <attribute id="INDHUITEMCOMP" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INDHUITEMCOMP"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDHUITEMCOMP"/>
+    </attribute>
+    <attribute id="INDLOCPARCOMP" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INDLOCPARCOMP"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDLOCPARCOMP"/>
+    </attribute>
+    <attribute id="INDLOCPAREMPT" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INDLOCPAREMPT"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDLOCPAREMPT"/>
+    </attribute>
+    <attribute id="INDHUITEMEMPT" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INDHUITEMEMPT"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDHUITEMEMPT"/>
+    </attribute>
+    <attribute id="INDHUITEMNOEX" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INDHUITEMNOEX"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDHUITEMNOEX"/>
+    </attribute>
+    <attribute id="INDITEMCHECKED" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INDITEMCHECKED"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDITEMCHECKED"/>
+    </attribute>
+    <attribute id="INDADDITCHECK" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INDADDITCHECK"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDADDITCHECK"/>
+    </attribute>
+    <attribute id="REASON" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REASON"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="REASON"/>
+    </attribute>
+    <attribute id="HOLDINCLUDE" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HOLDINCLUDE"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="HOLDINCLUDE"/>
+    </attribute>
+    <attribute id="INSPTYP" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INSPTYP"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INSPTYP"/>
+    </attribute>
+    <attribute id="INSPID" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INSPID"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INSPID"/>
+    </attribute>
+    <attribute id="IDPLATE" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IDPLATE"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="IDPLATE"/>
+    </attribute>
+    <attribute id="QDOCCAT" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QDOCCAT"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="QDOCCAT"/>
+    </attribute>
+    <attribute id="QDOCID" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QDOCID"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="QDOCID"/>
+    </attribute>
+    <attribute id="QITMID" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QITMID"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="QITMID"/>
+    </attribute>
+    <attribute id="HOLDINCLUDEINF" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HOLDINCLUDEINF"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="HOLDINCLUDEINF"/>
+    </attribute>
+    <attribute id="VFDAT" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VFDAT"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="VFDAT"/>
+    </attribute>
+    <attribute id="COO" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COO"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="COO"/>
+    </attribute>
+    <attribute id="BRESTR" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRESTR"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="BRESTR"/>
+    </attribute>
+    <attribute id="EXCCODE" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EXCCODE"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="EXCCODE"/>
+    </attribute>
+    <attribute id="IPRCODE" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IPRCODE"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="IPRCODE"/>
+    </attribute>
+    <attribute id="DATAAGING" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATAAGING"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DATAAGING"/>
+    </attribute>
+    <attribute id="GUIDDOC" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GUIDDOC"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="GUIDDOC"/>
+    </attribute>
+    <attribute id="DOCYEAR" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOC_YEAR"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DOCYEAR"/>
+    </attribute>
+    <attribute id="DOCNUMBER" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DOC_NUMBER"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DOCNUMBER"/>
+    </attribute>
+    <attribute id="LGNUM" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LGNUM"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="LGNUM"/>
+    </attribute>
+    <attribute id="ITEMNO_1" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ITEMNO_1"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMNO_1"/>
+    </attribute>
+    <attribute id="ITEMTYPE_1" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ITEMTYPE_1"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMTYPE_1"/>
+    </attribute>
+    <attribute id="MATNR" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATERIAL"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MATID" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATID"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="MATID"/>
+    </attribute>
+    <attribute id="ITEMNO_2" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ITEMNO_2"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMNO_2"/>
+    </attribute>
+    <attribute id="ITEMTYPE_2" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ITEMTYPE_2"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMTYPE_2"/>
+    </attribute>
+    <attribute id="LGTYP" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage_TYPE"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="LGTYP"/>
+    </attribute>
+    <attribute id="LGPLA" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Storage_BIN"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="LGPLA"/>
+    </attribute>
+    <attribute id="LGORT" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Location"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="LGORT"/>
+    </attribute>
+    <attribute id="WERKS" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant"/>
+      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="WERKS"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="LINEIDX" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LINEIDX"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="LINEIDX"/>
+    </measure>
+    <measure id="CHANGESEQ" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="CHANGESEQ"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="CHANGESEQ"/>
+    </measure>
+    <measure id="LVL" order="7" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LVL"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="LVL"/>
+    </measure>
+    <measure id="COUNTDATE" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="COUNT_DATE"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="COUNTDATE"/>
+    </measure>
+    <measure id="CREATEDATE" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="CREATEDATE"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="CREATEDATE"/>
+    </measure>
+    <measure id="POSTDATE" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="POSTDATE"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="POSTDATE"/>
+    </measure>
+    <measure id="TIMEBOOKQUAND" order="25" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="TIMEBOOKQUAND"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="TIMEBOOKQUAND"/>
+    </measure>
+    <measure id="ORDERSEQ" order="30" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ORDERSEQ"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="ORDERSEQ"/>
+    </measure>
+    <measure id="WDATU" order="48" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WDATU"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="WDATU"/>
+    </measure>
+    <measure id="LINEIDX_1" order="60" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LINEIDX_1"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="LINEIDX_1"/>
+    </measure>
+    <measure id="LINEIDX_2" order="65" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LINEIDX_2"/>
+      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="LINEIDX_2"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="422.15218199852" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="DOC_IT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="696.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="LOGHEAD" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.00000000000006" y="696.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="DOC_JOIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118.66666666666669" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="DOC_IT" modelObjectNameSpace="DOC_JOIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="108"/>
+    </shape>
+    <shape modelObjectName="LOGHEAD" modelObjectNameSpace="DOC_JOIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="124"/>
+    </shape>
+    <shape expanded="true" modelObjectName="IT_BIZ_JOIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="145.33333333333337" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="DOC_JOIN" modelObjectNameSpace="IT_BIZ_JOIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="185"/>
+    </shape>
+    <shape modelObjectName="IT_BIZ" modelObjectNameSpace="IT_BIZ_JOIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="360" y="52"/>
+      <rectangleSize width="141"/>
+    </shape>
+    <shape expanded="true" modelObjectName="IT_BIZ" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="384.11215526044043" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="PAR_BIZ" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="489.48394766311617" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="PAR_BIZ_JOIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422.15218199852" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="IT_BIZ_JOIN" modelObjectNameSpace="PAR_BIZ_JOIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="185"/>
+    </shape>
+    <shape modelObjectName="PAR_BIZ" modelObjectNameSpace="PAR_BIZ_JOIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="141"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
