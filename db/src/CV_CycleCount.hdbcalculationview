@@ -389,7 +389,7 @@
     <calculatedViewAttributes/>
     <input node="S_PI_PAR_BIZ_HANA_303"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="PAR_BIZ_JOIN" cardinality="CN_N" joinType="inner">
+  <calculationView xsi:type="Calculation:JoinView" id="PAR_JOIN" cardinality="CN_N" joinType="inner">
     <viewAttributes>
       <viewAttribute id="MANDT"/>
       <viewAttribute id="ITEMNO"/>
@@ -548,290 +548,290 @@
     <joinAttribute name="ITEMTYPE"/>
   </calculationView>
 </calculationViews>
-<logicalModel id="PAR_BIZ_JOIN">
+<logicalModel id="PAR_JOIN">
   <attributes>
     <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLIENT"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="MANDT"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="MANDT"/>
     </attribute>
     <attribute id="ITEMNO" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ITEM_NUMBER"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMNO"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMNO"/>
     </attribute>
     <attribute id="ITEMTYPE" order="5" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ITEMTYPE"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMTYPE"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMTYPE"/>
     </attribute>
     <attribute id="ITEMGROUP" order="6" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ITEMGROUP"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMGROUP"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMGROUP"/>
     </attribute>
     <attribute id="DOCTYPE" order="8" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DOCUMENT_TYPE"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DOCTYPE"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="DOCTYPE"/>
     </attribute>
     <attribute id="DOCSTATUS" order="9" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DOCUMNET_STATUS"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DOCSTATUS"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="DOCSTATUS"/>
     </attribute>
     <attribute id="COUNTUSER" order="11" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="COUNT_USER"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="COUNTUSER"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="COUNTUSER"/>
     </attribute>
     <attribute id="DIFDIRECTION" order="14" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DIFDIRECTION"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DIFDIRECTION"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="DIFDIRECTION"/>
     </attribute>
     <attribute id="POSTITEM" order="15" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="POSTITEM"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="POSTITEM"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="POSTITEM"/>
     </attribute>
     <attribute id="GUIDITEM" order="16" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GUIDITEM"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="GUIDITEM"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="GUIDITEM"/>
     </attribute>
     <attribute id="TYPEITEM" order="17" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="TYPEITEM"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="TYPEITEM"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="TYPEITEM"/>
     </attribute>
     <attribute id="IDXITEM" order="18" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="IDXITEM"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="IDXITEM"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="IDXITEM"/>
     </attribute>
     <attribute id="GUIDPARENT" order="19" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GUIDPARENT"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="GUIDPARENT"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="GUIDPARENT"/>
     </attribute>
     <attribute id="TYPEPARENT" order="20" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="TYPEPARENT"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="TYPEPARENT"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="TYPEPARENT"/>
     </attribute>
     <attribute id="IDXPARENT" order="21" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="IDXPARENT"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="IDXPARENT"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="IDXPARENT"/>
     </attribute>
     <attribute id="PIAREA" order="22" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="PIAREA"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="PIAREA"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="PIAREA"/>
     </attribute>
     <attribute id="BLOCKIND" order="23" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="BLOCKIND"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="BLOCKIND"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="BLOCKIND"/>
     </attribute>
     <attribute id="FREEZEIND" order="24" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="FREEZEIND"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="FREEZEIND"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="FREEZEIND"/>
     </attribute>
     <attribute id="VSIITEM" order="26" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VSIITEM"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="VSIITEM"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="VSIITEM"/>
     </attribute>
     <attribute id="PRIORITY" order="27" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="PRIORITY"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="PRIORITY"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="PRIORITY"/>
     </attribute>
     <attribute id="ITEMNEWIND" order="28" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ITEMNEWIND"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMNEWIND"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMNEWIND"/>
     </attribute>
     <attribute id="INDPRINTED" order="29" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INDPRINTED"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDPRINTED"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="INDPRINTED"/>
     </attribute>
     <attribute id="LINEGUID" order="31" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="LINEGUID"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="LINEGUID"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="LINEGUID"/>
     </attribute>
     <attribute id="INDHUITEMCOMP" order="32" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INDHUITEMCOMP"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDHUITEMCOMP"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="INDHUITEMCOMP"/>
     </attribute>
     <attribute id="INDLOCPARCOMP" order="33" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INDLOCPARCOMP"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDLOCPARCOMP"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="INDLOCPARCOMP"/>
     </attribute>
     <attribute id="INDLOCPAREMPT" order="34" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INDLOCPAREMPT"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDLOCPAREMPT"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="INDLOCPAREMPT"/>
     </attribute>
     <attribute id="INDHUITEMEMPT" order="35" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INDHUITEMEMPT"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDHUITEMEMPT"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="INDHUITEMEMPT"/>
     </attribute>
     <attribute id="INDHUITEMNOEX" order="36" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INDHUITEMNOEX"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDHUITEMNOEX"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="INDHUITEMNOEX"/>
     </attribute>
     <attribute id="INDITEMCHECKED" order="37" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INDITEMCHECKED"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDITEMCHECKED"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="INDITEMCHECKED"/>
     </attribute>
     <attribute id="INDADDITCHECK" order="38" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INDADDITCHECK"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INDADDITCHECK"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="INDADDITCHECK"/>
     </attribute>
     <attribute id="REASON" order="39" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="REASON"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="REASON"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="REASON"/>
     </attribute>
     <attribute id="HOLDINCLUDE" order="40" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="HOLDINCLUDE"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="HOLDINCLUDE"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="HOLDINCLUDE"/>
     </attribute>
     <attribute id="INSPTYP" order="41" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INSPTYP"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INSPTYP"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="INSPTYP"/>
     </attribute>
     <attribute id="INSPID" order="42" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INSPID"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="INSPID"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="INSPID"/>
     </attribute>
     <attribute id="IDPLATE" order="43" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="IDPLATE"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="IDPLATE"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="IDPLATE"/>
     </attribute>
     <attribute id="QDOCCAT" order="44" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="QDOCCAT"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="QDOCCAT"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="QDOCCAT"/>
     </attribute>
     <attribute id="QDOCID" order="45" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="QDOCID"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="QDOCID"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="QDOCID"/>
     </attribute>
     <attribute id="QITMID" order="46" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="QITMID"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="QITMID"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="QITMID"/>
     </attribute>
     <attribute id="HOLDINCLUDEINF" order="47" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="HOLDINCLUDEINF"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="HOLDINCLUDEINF"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="HOLDINCLUDEINF"/>
     </attribute>
     <attribute id="VFDAT" order="49" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VFDAT"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="VFDAT"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="VFDAT"/>
     </attribute>
     <attribute id="COO" order="50" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="COO"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="COO"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="COO"/>
     </attribute>
     <attribute id="BRESTR" order="51" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="BRESTR"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="BRESTR"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="BRESTR"/>
     </attribute>
     <attribute id="EXCCODE" order="52" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="EXCCODE"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="EXCCODE"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="EXCCODE"/>
     </attribute>
     <attribute id="IPRCODE" order="53" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="IPRCODE"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="IPRCODE"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="IPRCODE"/>
     </attribute>
     <attribute id="DATAAGING" order="54" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DATAAGING"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DATAAGING"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="DATAAGING"/>
     </attribute>
     <attribute id="GUIDDOC" order="55" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="GUIDDOC"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="GUIDDOC"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="GUIDDOC"/>
     </attribute>
     <attribute id="DOCYEAR" order="56" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DOC_YEAR"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DOCYEAR"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="DOCYEAR"/>
     </attribute>
     <attribute id="DOCNUMBER" order="57" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DOC_NUMBER"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="DOCNUMBER"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="DOCNUMBER"/>
     </attribute>
     <attribute id="LGNUM" order="58" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="LGNUM"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="LGNUM"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="LGNUM"/>
     </attribute>
     <attribute id="ITEMNO_1" order="59" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ITEMNO_1"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMNO_1"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMNO_1"/>
     </attribute>
     <attribute id="ITEMTYPE_1" order="61" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ITEMTYPE_1"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMTYPE_1"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMTYPE_1"/>
     </attribute>
     <attribute id="MATNR" order="62" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MATERIAL"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="MATNR"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="MATNR"/>
     </attribute>
     <attribute id="MATID" order="63" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MATID"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="MATID"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="MATID"/>
     </attribute>
     <attribute id="ITEMNO_2" order="64" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ITEMNO_2"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMNO_2"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMNO_2"/>
     </attribute>
     <attribute id="ITEMTYPE_2" order="66" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ITEMTYPE_2"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="ITEMTYPE_2"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMTYPE_2"/>
     </attribute>
     <attribute id="LGTYP" order="67" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Storage_TYPE"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="LGTYP"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="LGTYP"/>
     </attribute>
     <attribute id="LGPLA" order="68" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Storage_BIN"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="LGPLA"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="LGPLA"/>
     </attribute>
     <attribute id="LGORT" order="69" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Location"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="LGORT"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="LGORT"/>
     </attribute>
     <attribute id="WERKS" order="70" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Plant"/>
-      <keyMapping columnObjectName="PAR_BIZ_JOIN" columnName="WERKS"/>
+      <keyMapping columnObjectName="PAR_JOIN" columnName="WERKS"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
     <measure id="LINEIDX" order="3" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="LINEIDX"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="LINEIDX"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="LINEIDX"/>
     </measure>
     <measure id="CHANGESEQ" order="4" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="CHANGESEQ"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="CHANGESEQ"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="CHANGESEQ"/>
     </measure>
     <measure id="LVL" order="7" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="LVL"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="LVL"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="LVL"/>
     </measure>
     <measure id="COUNTDATE" order="10" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="COUNT_DATE"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="COUNTDATE"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="COUNTDATE"/>
     </measure>
     <measure id="CREATEDATE" order="12" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="CREATEDATE"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="CREATEDATE"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="CREATEDATE"/>
     </measure>
     <measure id="POSTDATE" order="13" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="POSTDATE"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="POSTDATE"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="POSTDATE"/>
     </measure>
     <measure id="TIMEBOOKQUAND" order="25" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="TIMEBOOKQUAND"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="TIMEBOOKQUAND"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="TIMEBOOKQUAND"/>
     </measure>
     <measure id="ORDERSEQ" order="30" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="ORDERSEQ"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="ORDERSEQ"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="ORDERSEQ"/>
     </measure>
     <measure id="WDATU" order="48" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="WDATU"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="WDATU"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="WDATU"/>
     </measure>
     <measure id="LINEIDX_1" order="60" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="LINEIDX_1"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="LINEIDX_1"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="LINEIDX_1"/>
     </measure>
     <measure id="LINEIDX_2" order="65" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="LINEIDX_2"/>
-      <measureMapping columnObjectName="PAR_BIZ_JOIN" columnName="LINEIDX_2"/>
+      <measureMapping columnObjectName="PAR_JOIN" columnName="LINEIDX_2"/>
     </measure>
   </baseMeasures>
   <calculatedMeasures/>
@@ -841,21 +841,21 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="422.15218199852" y="112"/>
+      <upperLeftCorner x="422" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="DOC_IT" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="696.9999964237213"/>
+      <upperLeftCorner x="92" y="696"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="LOGHEAD" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302.00000000000006" y="696.9999964237213"/>
+      <upperLeftCorner x="302" y="696"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="DOC_JOIN" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="118.66666666666669" y="536.9999976158142"/>
+      <upperLeftCorner x="118" y="536"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="DOC_IT" modelObjectNameSpace="DOC_JOIN" modelObjectType="JoinNodeInput">
@@ -867,7 +867,7 @@
       <rectangleSize width="124"/>
     </shape>
     <shape expanded="true" modelObjectName="IT_BIZ_JOIN" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="145.33333333333337" y="376.9999988079071"/>
+      <upperLeftCorner x="145" y="376"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="DOC_JOIN" modelObjectNameSpace="IT_BIZ_JOIN" modelObjectType="JoinNodeInput">
@@ -879,23 +879,23 @@
       <rectangleSize width="141"/>
     </shape>
     <shape expanded="true" modelObjectName="IT_BIZ" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="384.11215526044043" y="536.9999976158142"/>
+      <upperLeftCorner x="384" y="536"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="PAR_BIZ" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="489.48394766311617" y="376.9999988079071"/>
+      <upperLeftCorner x="489" y="376"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="PAR_BIZ_JOIN" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="422.15218199852" y="217"/>
+    <shape expanded="true" modelObjectName="PAR_JOIN" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="422" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="IT_BIZ_JOIN" modelObjectNameSpace="PAR_BIZ_JOIN" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="IT_BIZ_JOIN" modelObjectNameSpace="PAR_JOIN" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="20" y="30"/>
       <rectangleSize width="185"/>
     </shape>
-    <shape modelObjectName="PAR_BIZ" modelObjectNameSpace="PAR_BIZ_JOIN" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="PAR_BIZ" modelObjectNameSpace="PAR_JOIN" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="141"/>
     </shape>
