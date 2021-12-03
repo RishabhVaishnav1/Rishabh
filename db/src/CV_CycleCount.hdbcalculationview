@@ -4,17 +4,23 @@
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="S_PI_DOC_IT_HANA_303">
-    <resourceUri>S_PI_DOC_IT_HANA_303</resourceUri>
+  <DataSource id="S_PI_DOC_IT_HANA">
+    <resourceUri>S_PI_DOC_IT_HANA</resourceUri>
   </DataSource>
-  <DataSource id="S_PI_LOGHEAD_HANA_303">
-    <resourceUri>S_PI_LOGHEAD_HANA_303</resourceUri>
+  <DataSource id="S_PI_LOGHEAD_HANA">
+    <resourceUri>S_PI_LOGHEAD_HANA</resourceUri>
   </DataSource>
-  <DataSource id="S_PI_IT_BIZ_HANA_303">
-    <resourceUri>S_PI_IT_BIZ_HANA_303</resourceUri>
+  <DataSource id="S_PI_IT_BIZ_HANA">
+    <resourceUri>S_PI_IT_BIZ_HANA</resourceUri>
   </DataSource>
-  <DataSource id="S_PI_PAR_BIZ_HANA_303">
-    <resourceUri>S_PI_PAR_BIZ_HANA_303</resourceUri>
+  <DataSource id="S_PI_PAR_BIZ_HANA">
+    <resourceUri>S_PI_PAR_BIZ_HANA</resourceUri>
+  </DataSource>
+  <DataSource id="S_MATID_MAP_HANA">
+    <resourceUri>S_MATID_MAP_HANA</resourceUri>
+  </DataSource>
+  <DataSource id="S_MATKEY_HANA">
+    <resourceUri>S_MATKEY_HANA</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
@@ -77,7 +83,7 @@
       <viewAttribute id="DATAAGING"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="S_PI_DOC_IT_HANA_303"/>
+    <input node="S_PI_DOC_IT_HANA"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="LOGHEAD">
     <viewAttributes>
@@ -87,7 +93,7 @@
       <viewAttribute id="LGNUM"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="S_PI_LOGHEAD_HANA_303"/>
+    <input node="S_PI_LOGHEAD_HANA"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="DOC_JOIN" cardinality="CN_N" joinType="inner">
     <viewAttributes>
@@ -278,13 +284,7 @@
       <viewAttribute id="DOCYEAR"/>
       <viewAttribute id="DOCNUMBER"/>
       <viewAttribute id="LGNUM"/>
-    
-      <viewAttribute id="ITEMNO_1"/>
-      <viewAttribute id="LINEIDX_1" aggregationType="sum"/>
-      <viewAttribute id="ITEMTYPE_1"/>
-    
       <viewAttribute id="MATNR"/>
-      <viewAttribute id="MATID"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="DOC_JOIN">
@@ -347,21 +347,17 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="DOCNUMBER" source="DOCNUMBER"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
     </input>
-    <input node="IT_BIZ">
-      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO_1" source="ITEMNO"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX_1" source="LINEIDX"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE_1" source="ITEMTYPE"/>
+    <input node="IT_BIZ_MATERIAL">
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATID" source="MATID"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE" source="ITEMTYPE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="GUIDDOC" source="GUIDDOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE" source="ITEMTYPE"/>
     </input>
-    <joinAttribute name="ITEMNO"/>
-    <joinAttribute name="LINEIDX"/>
-    <joinAttribute name="ITEMTYPE"/>
     <joinAttribute name="GUIDDOC"/>
+    <joinAttribute name="LINEIDX"/>
+    <joinAttribute name="ITEMNO"/>
+    <joinAttribute name="ITEMTYPE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="IT_BIZ">
     <viewAttributes>
@@ -373,7 +369,7 @@
     
       <viewAttribute id="GUIDDOC"/></viewAttributes>
     <calculatedViewAttributes/>
-    <input node="S_PI_IT_BIZ_HANA_303"/>
+    <input node="S_PI_IT_BIZ_HANA"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="PAR_BIZ">
     <viewAttributes>
@@ -387,7 +383,7 @@
       <viewAttribute id="WERKS"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="S_PI_PAR_BIZ_HANA_303"/>
+    <input node="S_PI_PAR_BIZ_HANA"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="PAR_JOIN" cardinality="CN_N" joinType="inner">
     <viewAttributes>
@@ -449,11 +445,6 @@
       <viewAttribute id="DOCYEAR"/>
       <viewAttribute id="DOCNUMBER"/>
       <viewAttribute id="LGNUM"/>
-      <viewAttribute id="ITEMNO_1"/>
-      <viewAttribute id="LINEIDX_1" aggregationType="sum"/>
-      <viewAttribute id="ITEMTYPE_1"/>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="MATID"/>
       <viewAttribute id="ITEMNO_2"/>
       <viewAttribute id="LINEIDX_2" aggregationType="sum"/>
       <viewAttribute id="ITEMTYPE_2"/>
@@ -522,13 +513,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="GUIDDOC" source="GUIDDOC"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="DOCYEAR" source="DOCYEAR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="DOCNUMBER" source="DOCNUMBER"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO_1" source="ITEMNO_1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX_1" source="LINEIDX_1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE_1" source="ITEMTYPE_1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATID" source="MATID"/>
-    </input>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LGNUM" source="LGNUM"/></input>
     <input node="PAR_BIZ">
       <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO_2" source="ITEMNO"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX_2" source="LINEIDX"/>
@@ -546,6 +531,78 @@
     <joinAttribute name="LINEIDX"/>
     <joinAttribute name="ITEMNO"/>
     <joinAttribute name="ITEMTYPE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MATID_MAP">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATIDC22"/>
+      <viewAttribute id="MATIDX16"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="S_MATID_MAP_HANA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MATKEY">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="S_MATKEY_HANA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="MATERIAL" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATIDC22"/>
+      <viewAttribute id="MATIDX16"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MATID_MAP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDC22" source="MATIDC22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDX16" source="MATIDX16"/>
+    </input>
+    <input node="MATKEY">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATID" source="MATID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDC22" source="MATID"/>
+    </input>
+    <joinAttribute name="MATIDC22"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="IT_BIZ_MATERIAL" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="MATIDC22"/>
+      <viewAttribute id="MATIDX16"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATID"/>
+      <viewAttribute id="ITEMNO"/>
+      <viewAttribute id="LINEIDX" aggregationType="sum"/>
+      <viewAttribute id="ITEMTYPE"/>
+      <viewAttribute id="MATNR_1"/>
+      <viewAttribute id="MATID_1"/>
+      <viewAttribute id="GUIDDOC"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MATERIAL">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDC22" source="MATIDC22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDX16" source="MATIDX16"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATID" source="MATID"/>
+    </input>
+    <input node="IT_BIZ">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE" source="ITEMTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_1" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATID_1" source="MATID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GUIDDOC" source="GUIDDOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDX16" source="MATID"/>
+    </input>
+  
+    <joinAttribute name="MATIDX16"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="PAR_JOIN">
@@ -746,43 +803,27 @@
       <descriptions defaultDescription="LGNUM"/>
       <keyMapping columnObjectName="PAR_JOIN" columnName="LGNUM"/>
     </attribute>
-    <attribute id="ITEMNO_1" order="59" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ITEMNO_1"/>
-      <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMNO_1"/>
-    </attribute>
-    <attribute id="ITEMTYPE_1" order="61" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ITEMTYPE_1"/>
-      <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMTYPE_1"/>
-    </attribute>
-    <attribute id="MATNR" order="62" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATERIAL"/>
-      <keyMapping columnObjectName="PAR_JOIN" columnName="MATNR"/>
-    </attribute>
-    <attribute id="MATID" order="63" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATID"/>
-      <keyMapping columnObjectName="PAR_JOIN" columnName="MATID"/>
-    </attribute>
-    <attribute id="ITEMNO_2" order="64" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ITEMNO_2" order="59" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ITEMNO_2"/>
       <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMNO_2"/>
     </attribute>
-    <attribute id="ITEMTYPE_2" order="66" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ITEMTYPE_2" order="61" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ITEMTYPE_2"/>
       <keyMapping columnObjectName="PAR_JOIN" columnName="ITEMTYPE_2"/>
     </attribute>
-    <attribute id="LGTYP" order="67" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LGTYP" order="62" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Storage_TYPE"/>
       <keyMapping columnObjectName="PAR_JOIN" columnName="LGTYP"/>
     </attribute>
-    <attribute id="LGPLA" order="68" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LGPLA" order="63" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Storage_BIN"/>
       <keyMapping columnObjectName="PAR_JOIN" columnName="LGPLA"/>
     </attribute>
-    <attribute id="LGORT" order="69" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LGORT" order="64" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Location"/>
       <keyMapping columnObjectName="PAR_JOIN" columnName="LGORT"/>
     </attribute>
-    <attribute id="WERKS" order="70" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WERKS" order="65" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Plant"/>
       <keyMapping columnObjectName="PAR_JOIN" columnName="WERKS"/>
     </attribute>
@@ -825,11 +866,7 @@
       <descriptions defaultDescription="WDATU"/>
       <measureMapping columnObjectName="PAR_JOIN" columnName="WDATU"/>
     </measure>
-    <measure id="LINEIDX_1" order="60" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="LINEIDX_1"/>
-      <measureMapping columnObjectName="PAR_JOIN" columnName="LINEIDX_1"/>
-    </measure>
-    <measure id="LINEIDX_2" order="65" aggregationType="sum" measureType="simple">
+    <measure id="LINEIDX_2" order="60" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="LINEIDX_2"/>
       <measureMapping columnObjectName="PAR_JOIN" columnName="LINEIDX_2"/>
     </measure>
@@ -874,9 +911,9 @@
       <upperLeftCorner x="20" y="30"/>
       <rectangleSize width="185"/>
     </shape>
-    <shape modelObjectName="IT_BIZ" modelObjectNameSpace="IT_BIZ_JOIN" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="360" y="52"/>
-      <rectangleSize width="141"/>
+    <shape modelObjectName="IT_BIZ_MATERIAL" modelObjectNameSpace="IT_BIZ_JOIN" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
     </shape>
     <shape expanded="true" modelObjectName="IT_BIZ" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="384" y="536"/>
@@ -897,6 +934,39 @@
     </shape>
     <shape modelObjectName="PAR_BIZ" modelObjectNameSpace="PAR_JOIN" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="141"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="MATID_MAP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="685" y="626"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MATKEY" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="938" y="649"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MATERIAL" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="819" y="478"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="MATID_MAP" modelObjectNameSpace="MATERIAL" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="139"/>
+    </shape>
+    <shape modelObjectName="MATKEY" modelObjectNameSpace="MATERIAL" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="124"/>
+    </shape>
+    <shape expanded="true" modelObjectName="IT_BIZ_MATERIAL" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="605" y="478"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="MATERIAL" modelObjectNameSpace="IT_BIZ_MATERIAL" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="287" y="44"/>
+      <rectangleSize width="139.58203125"/>
+    </shape>
+    <shape modelObjectName="IT_BIZ" modelObjectNameSpace="IT_BIZ_MATERIAL" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="74" y="44"/>
       <rectangleSize width="141"/>
     </shape>
   </shapes>
