@@ -316,5 +316,59 @@
       "object": "ZSC_SERVICENOW_HANA",
       "schema": "Z_S4_303"
     }
+  },
+  "S_MATID_MAP_HANA_303": {
+    "target": {
+      "object": "MATID_MAP_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_MATKEY_HANA_303": {
+    "target": {
+      "object": "MATKEY_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_T300_HANA_303": {
+    "target": {
+      "object": "T300_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_T333A_HANA_303": {
+    "target": {
+      "object": "T333A_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_IFLOT_HANA_303": {
+    "target": {
+      "object": "IFLOT_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_ILOA_HANA_303": {
+    "target": {
+      "object": "ILOA_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_QMEL_HANA_303": {
+    "target": {
+      "object": "QMEL_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_PA0001_HANA_303": {
+    "target": {
+      "object": "PA0001_HANA",
+      "schema": "Z_S4_303"
+    }
+  },
+  "S_MARD_HANA_303": {
+    "target": {
+      "object": "MARD_HANA",
+      "schema": "Z_S4_303"
+    }
   }
 }
