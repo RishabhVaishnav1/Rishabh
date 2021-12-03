@@ -353,11 +353,13 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE" source="ITEMTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHANGESEQ" source="CHANGESEQ"/>
     </input>
     <joinAttribute name="GUIDDOC"/>
     <joinAttribute name="LINEIDX"/>
     <joinAttribute name="ITEMNO"/>
     <joinAttribute name="ITEMTYPE"/>
+    <joinAttribute name="CHANGESEQ"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="IT_BIZ">
     <viewAttributes>
@@ -367,7 +369,9 @@
       <viewAttribute id="MATNR"/>
       <viewAttribute id="MATID"/>
     
-      <viewAttribute id="GUIDDOC"/></viewAttributes>
+      <viewAttribute id="GUIDDOC"/>
+      <viewAttribute id="CHANGESEQ"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
     <input node="S_PI_IT_BIZ_HANA"/>
   </calculationView>
@@ -381,6 +385,8 @@
       <viewAttribute id="LGPLA"/>
       <viewAttribute id="LGORT"/>
       <viewAttribute id="WERKS"/>
+    
+      <viewAttribute id="CHANGESEQ"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="S_PI_PAR_BIZ_HANA"/>
@@ -526,11 +532,13 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ITEMTYPE" source="ITEMTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHANGESEQ" source="CHANGESEQ"/>
     </input>
     <joinAttribute name="GUIDDOC"/>
     <joinAttribute name="LINEIDX"/>
     <joinAttribute name="ITEMNO"/>
     <joinAttribute name="ITEMTYPE"/>
+    <joinAttribute name="CHANGESEQ"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="MATID_MAP">
     <viewAttributes>
@@ -570,7 +578,7 @@
     </input>
     <joinAttribute name="MATIDC22"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="IT_BIZ_MATERIAL" cardinality="CN_N" joinType="inner">
+  <calculationView xsi:type="Calculation:JoinView" id="IT_BIZ_MATERIAL" cardinality="CN_N" joinType="leftOuter">
     <viewAttributes>
       <viewAttribute id="MANDT"/>
       <viewAttribute id="MATIDC22"/>
@@ -583,15 +591,9 @@
       <viewAttribute id="MATNR_1"/>
       <viewAttribute id="MATID_1"/>
       <viewAttribute id="GUIDDOC"/>
+      <viewAttribute id="CHANGESEQ" aggregationType="sum"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="MATERIAL">
-      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDC22" source="MATIDC22"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDX16" source="MATIDX16"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATID" source="MATID"/>
-    </input>
     <input node="IT_BIZ">
       <mapping xsi:type="Calculation:AttributeMapping" target="ITEMNO" source="ITEMNO"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LINEIDX" source="LINEIDX"/>
@@ -599,10 +601,18 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_1" source="MATNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MATID_1" source="MATID"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="GUIDDOC" source="GUIDDOC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDX16" source="MATID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHANGESEQ" source="CHANGESEQ"/>
     </input>
   
-    <joinAttribute name="MATIDX16"/>
+    <input node="MATERIAL">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDC22" source="MATIDC22"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATIDX16" source="MATIDX16"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATID" source="MATID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATID_1" source="MATIDX16"/>
+    </input>
+    <joinAttribute name="MATID_1"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="PAR_JOIN">
@@ -878,21 +888,21 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="422" y="112"/>
+      <upperLeftCorner x="456.8516971503859" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="DOC_IT" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="696"/>
+      <upperLeftCorner x="301.9999999999998" y="696.9999964237213"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="LOGHEAD" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="696"/>
+      <upperLeftCorner x="92" y="696.9999964237213"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="DOC_JOIN" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="118" y="536"/>
+      <upperLeftCorner x="275.3333333333331" y="536.9999976158142"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="DOC_IT" modelObjectNameSpace="DOC_JOIN" modelObjectType="JoinNodeInput">
@@ -904,7 +914,7 @@
       <rectangleSize width="124"/>
     </shape>
     <shape expanded="true" modelObjectName="IT_BIZ_JOIN" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="145" y="376"/>
+      <upperLeftCorner x="540.6925624178573" y="376.9999988079071"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="DOC_JOIN" modelObjectNameSpace="IT_BIZ_JOIN" modelObjectType="JoinNodeInput">
@@ -916,16 +926,16 @@
       <rectangleSize width="250"/>
     </shape>
     <shape expanded="true" modelObjectName="IT_BIZ" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="384" y="536"/>
+      <upperLeftCorner x="757.1225006821751" y="696.9999964237213"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="PAR_BIZ" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="489" y="376"/>
+      <upperLeftCorner x="323.01235966473126" y="376.9999988079071"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PAR_JOIN" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="422" y="217"/>
+      <upperLeftCorner x="456.8516971503859" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="IT_BIZ_JOIN" modelObjectNameSpace="PAR_JOIN" modelObjectType="JoinNodeInput">
@@ -938,15 +948,15 @@
     </shape>
   
     <shape expanded="true" modelObjectName="MATID_MAP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="685" y="626"/>
+      <upperLeftCorner x="628.8614067846192" y="856.9999952316284"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MATKEY" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="938" y="649"/>
+      <upperLeftCorner x="418.86140678461913" y="856.9999952316284"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MATERIAL" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="819" y="478"/>
+      <upperLeftCorner x="540.6925624178573" y="696.9999964237213"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="MATID_MAP" modelObjectNameSpace="MATERIAL" modelObjectType="JoinNodeInput">
@@ -958,14 +968,14 @@
       <rectangleSize width="124"/>
     </shape>
     <shape expanded="true" modelObjectName="IT_BIZ_MATERIAL" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="605" y="478"/>
+      <upperLeftCorner x="567.3592290845239" y="550.3333309491475"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="MATERIAL" modelObjectNameSpace="IT_BIZ_MATERIAL" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="IT_BIZ" modelObjectNameSpace="IT_BIZ_MATERIAL" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="287" y="44"/>
       <rectangleSize width="139.58203125"/>
     </shape>
-    <shape modelObjectName="IT_BIZ" modelObjectNameSpace="IT_BIZ_MATERIAL" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="MATERIAL" modelObjectNameSpace="IT_BIZ_MATERIAL" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="74" y="44"/>
       <rectangleSize width="141"/>
     </shape>
